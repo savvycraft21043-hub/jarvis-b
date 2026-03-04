@@ -127,6 +127,23 @@ npm run dev
 
 Open `http://localhost:5173`.
 
+
+## Merge conflict prevention
+
+To reduce merge conflicts across VS Code/Windows/Linux collaborators:
+
+- `.gitattributes` enforces stable line endings and a deterministic merge strategy for `frontend/package-lock.json`.
+- `.gitignore` blocks local runtime files (`.venv`, `node_modules`, `dist`, `jarvis.db`, caches/logs) from being committed.
+
+Recommended workflow before opening a PR:
+
+```bash
+git fetch origin
+git rebase origin/main
+# resolve any conflict locally if shown
+git push --force-with-lease
+```
+
 ## Windows PowerShell npm policy fix
 
 If you get:

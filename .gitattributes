@@ -1,0 +1,13 @@
+# Normalize line endings for cross-platform merge stability
+* text=auto
+
+# Shell/Python line endings
+*.sh text eol=lf
+*.py text eol=lf
+
+# Windows scripts
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Keep lockfile merge deterministic to avoid manual conflict edits
+frontend/package-lock.json merge=ours
